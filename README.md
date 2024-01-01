@@ -26,7 +26,7 @@ Open `docker-compose.yml` and replace `<hugging_face_token>` with your own Huggi
 
 ```yaml
   environment:
-    - HUGGINGFACEHUB_API_TOKEN=<hugging_face_token>
+    - HUGGING_FACE_HUB_TOKEN=<hugging_face_token>
 ```
 
 3. Copy Model Weights
