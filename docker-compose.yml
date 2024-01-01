@@ -1,0 +1,21 @@
+version: "3"
+services:
+    vllm-openai:
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: all
+                          capabilities:
+                              - gpu
+        volumes:
+            - ~/.cache/huggingface:/root/.cache/huggingface
+            - ./models:/models
+        environment:
+            - HUGGING_FACE_HUB_TOKEN=<hugging_face_token>
+        ports:
+            - 8000:8000
+        ipc: host
+        image: vllm/vllm-openai:latest
+        command: --model /models/mistral-7b
