@@ -30,6 +30,7 @@ Open `docker-compose.yml` and replace `<hugging_face_token>` with your own Huggi
 ```
 
 3. Copy Model Weights
+   
 Download or copy the desired LLM model weights into the `models` directory within the cloned repository and update the model name.
 ```yaml
   command: --model /models/mistral-7b
