@@ -3,6 +3,8 @@ This repository contains a Docker Compose setup for running vLLM on Windows. Wit
 
 Enjoy the state-of-the art LLM serving throughput on your Windows Home PC with efficient paged attention, continuous batching and fast inferencing, Plus Qualitzation.
 
+![vllm-windows-home](https://github.com/aneeshjoy/vllm-windows/assets/5285961/5b9caae0-1cfd-4fb4-b86f-a8330e8428f0)
+
 Once the following is setup, you can start vLLM on the click of a button on Docker Desktop or configure to start at windows startup.
 
 ## Getting Started
