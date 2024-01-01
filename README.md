@@ -39,3 +39,7 @@ Download or copy the desired LLM model weights into the `models` directory withi
 ```bash
 docker-compose up
 ```
+5. Test by accessing the /models endpoints
+
+http://127.0.0.1:8000/v1/models
+
