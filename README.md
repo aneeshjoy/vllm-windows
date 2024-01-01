@@ -44,3 +44,34 @@ docker-compose up
 
 http://127.0.0.1:8000/v1/models
 
+
+6. Check throughput ( I am running on a RTX 3090 )
+
+http://127.0.0.1:8000/metrics
+
+```
+# HELP exceptions_total_counter Total number of requested which generated an exception
+# TYPE exceptions_total_counter counter
+# HELP requests_total_counter Total number of requests received
+# TYPE requests_total_counter counter
+requests_total_counter{method="POST",path="/v1/completions"} 24
+# HELP responses_total_counter Total number of responses sent
+# TYPE responses_total_counter counter
+responses_total_counter{method="POST",path="/v1/completions"} 24
+# HELP status_codes_counter Total number of response status codes
+# TYPE status_codes_counter counter
+status_codes_counter{method="POST",path="/v1/completions",status_code="200"} 24
+# HELP vllm:avg_generation_throughput_toks_per_s Average generation throughput in tokens/s.
+# TYPE vllm:avg_generation_throughput_toks_per_s gauge
+vllm:avg_generation_throughput_toks_per_s{model_name="/models/mistral-7b"} 842.7750196184555
+# HELP vllm:avg_prompt_throughput_toks_per_s Average prefill throughput in tokens/s.
+# TYPE vllm:avg_prompt_throughput_toks_per_s gauge
+vllm:avg_prompt_throughput_toks_per_s{model_name="/models/mistral-7b"} 1211.5997677115236
+# HELP vllm:cpu_cache_usage_perc CPU KV-cache usage. 1 means 100 percent usage.
+# TYPE vllm:cpu_cache_usage_perc gauge
+vllm:cpu_cache_usage_perc{model_name="/models/mistral-7b"} 0.0
+# HELP vllm:gpu_cache_usage_perc GPU KV-cache usage. 1 means 100 percent usage.
+# TYPE vllm:gpu_cache_usage_perc gauge
+vllm:gpu_cache_usage_perc{model_name="/models/mistral-7b"} 0.38849487785658
+# HELP vllm:num_requests_running Number of requests that is currently running for inference.
+```
